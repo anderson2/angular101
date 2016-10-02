@@ -16,6 +16,9 @@
     
     <body>
         <div ng-controller="CollectionController as collection">
+
+            <h4>ng-repeat (track by $index) example</h4>
+
             <p>Collection name is:
                 {{ collection.name }} 
             </p>
@@ -25,7 +28,7 @@
             </p>
             
             <input name="add-item" ng-model="collection.item" 
-                    type="text" placeholder="{{ collection.item }}"/>
+                    type="text" placeholder="Insert item"/>
             
             <button ng-click="collection.addItem()">Add to collection</button>
             
@@ -37,7 +40,8 @@
                 </li>
             </ul>
             
-            <button ng-click="collection.viewCollection()">Where's my collection?</button>
+
+            <h4>How is this example collection stored?</h4>
             
             <div ng-repeat="item in collection.items track by $index">
                 <ul>
@@ -47,17 +51,11 @@
                 </ul>
                 
             </div>
-            
-            <button>Distinct items in collection?</button>
-           
-            <div ng-repeat="item in collection.items">
-                    <p>
-                        {{ item }}
-                    </p>
-            
-            </div>
 
-            <p> More info about ng-Repeat: https://docs.angularjs.org/api/ng/directive/ngRepeat </p>       
+            <p> More info about ng-Repeat: 
+                <a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">
+                https://docs.angularjs.org/api/ng/directive/ngRepeat</a>
+            </p>       
         
         
         </div>  <!-- End div ng-controller="CollectionController as collection" -->
